@@ -131,12 +131,12 @@ const Home: NextPage = () => {
               Get inspired
             </p>
             <form className="mt-4 mb-6 sm:flex">
-              <label htmlFor="blade-search" className="sr-only">
+              <label htmlFor="recording-search" className="sr-only">
                 Search
               </label>
               <input
-                id="blade-search"
-                name="email"
+                id="recording-search"
+                name="search"
                 type="search"
                 className="w-full mb-4 sm:mb-0 sm:mr-4 px-5 py-3 placeholder-gray-500 focus:ring-pink-500 focus:border-pink-500 sm:max-w-xs border-gray-300 rounded-md"
                 placeholder="Search..."
