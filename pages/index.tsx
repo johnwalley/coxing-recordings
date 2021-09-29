@@ -80,20 +80,21 @@ const recordings = [
     imageSrc: "https://www.youtube.com/embed/y_jsl5JqmWU",
   },
   {
-    id: 9,
-    name: "U23 World Championship Cox recording - U.S. 8+ 5:22.480",
-    year: "2018",
-    description: "",
-    cox: "Rielly Milne",
-    imageSrc: "https://www.youtube.com/embed/nM0IXm_ixC8",
-  },
-  {
     id: 10,
     name: "UCSD Varsity 8 WIRA Grand Final 2015 Coxswain Recording",
     year: "2015",
     description: "",
     cox: "Cat Sheffler",
     imageSrc: "https://www.youtube.com/embed/J0wvtdfwy88",
+  },
+  {
+    id: 11,
+    name: "U23 World Championship Cox Recording - GB Men's 8+ 2021",
+    year: "2021",
+    description:
+      "This is a cox recording of the British Men's U23 Eight in Racice, Czech Republic at 2021 Under 23 World Championships.",
+    cox: "Scott Cockle",
+    imageSrc: "https://www.youtube.com/embed/9RGu9kUolkE",
   },
 ];
 
