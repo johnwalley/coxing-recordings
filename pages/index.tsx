@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import Layout from "../components/Layout";
+
 import { useMemo, useState } from "react";
 
 const recordings = [
@@ -121,93 +121,67 @@ const Home: NextPage = () => {
   );
 
   return (
-    <div>
-      <Head>
-        <title>Coxing Recordings | Get inspired</title>
-        <meta
-          name="description"
-          content="A collection of coxing recordings. Useful as a training aid and a great place to pick up new calls to add to
-  your repertoire."
+    <Layout title="Coxing Recordings | Get inspired">
+      <h2 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Coxing Recordings
+      </h2>
+      <p className="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
+        Get inspired
+      </p>
+      <form className="mt-4 mb-6 sm:flex">
+        <label htmlFor="recording-search" className="sr-only">
+          Search
+        </label>
+        <input
+          id="recording-search"
+          name="search"
+          type="search"
+          className="w-full mb-4 sm:mb-0 sm:mr-4 px-5 py-3 placeholder-gray-500 focus:ring-pink-500 focus:border-pink-500 sm:max-w-xs border-gray-300 rounded-md"
+          placeholder="Search..."
+          value={searchValue}
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
         />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <div className="bg-white">
-          <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <h2 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Coxing Recordings
-            </h2>
-            <p className="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
-              Get inspired
-            </p>
-            <form className="mt-4 mb-6 sm:flex">
-              <label htmlFor="recording-search" className="sr-only">
-                Search
-              </label>
-              <input
-                id="recording-search"
-                name="search"
-                type="search"
-                className="w-full mb-4 sm:mb-0 sm:mr-4 px-5 py-3 placeholder-gray-500 focus:ring-pink-500 focus:border-pink-500 sm:max-w-xs border-gray-300 rounded-md"
-                placeholder="Search..."
-                value={searchValue}
-                onChange={(event) => {
-                  setSearchValue(event.target.value);
-                }}
-              />
-              <p className="self-end">
-                Showing <strong>{filteredRecordings.length}</strong> of{" "}
-                <strong>{recordings.length}</strong> recordings
-              </p>
-            </form>
-            <h2 className="sr-only">Recordings</h2>
-            <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-              {filteredRecordings.map((recording) => (
-                <div
-                  key={recording.id}
-                  className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
-                >
-                  <div className="aspect-w-16 aspect-h-9 bg-gray-200 group-hover:opacity-75">
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={recording.imageSrc}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="flex-1 p-4 space-y-2 flex flex-col">
-                    <h3 className="text-sm font-medium text-gray-900">
-                      {recording.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      {recording.description}
-                    </p>
-                    <div className="flex-1 flex flex-col justify-end">
-                      <p className="text-sm italic text-gray-500">
-                        {recording.cox}
-                      </p>
-                      <p className="text-base font-medium text-gray-900">
-                        {recording.year}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        <p className="self-end">
+          Showing <strong>{filteredRecordings.length}</strong> of{" "}
+          <strong>{recordings.length}</strong> recordings
+        </p>
+      </form>
+      <h2 className="sr-only">Recordings</h2>
+      <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
+        {filteredRecordings.map((recording) => (
+          <div
+            key={recording.id}
+            className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
+          >
+            <div className="aspect-w-16 aspect-h-9 bg-gray-200 group-hover:opacity-75">
+              <iframe
+                width="560"
+                height="315"
+                src={recording.imageSrc}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="flex-1 p-4 space-y-2 flex flex-col">
+              <h3 className="text-sm font-medium text-gray-900">
+                {recording.name}
+              </h3>
+              <p className="text-sm text-gray-500">{recording.description}</p>
+              <div className="flex-1 flex flex-col justify-end">
+                <p className="text-sm italic text-gray-500">{recording.cox}</p>
+                <p className="text-base font-medium text-gray-900">
+                  {recording.year}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
-      <footer className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-          <p className="mt-8 text-center text-base text-gray-400">
-            &copy; 2021 John Walley.
-          </p>
-        </div>
-      </footer>
-    </div>
+        ))}
+      </div>
+    </Layout>
   );
 };
 
