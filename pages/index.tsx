@@ -96,6 +96,15 @@ const recordings = [
     cox: "Scott Cockle",
     imageSrc: "https://www.youtube.com/embed/9RGu9kUolkE",
   },
+  {
+    id: 12,
+    name: "Brookes C - BUCS Regatta 2019 - Int 8+ Final - Cox Recording",
+    year: "2019",
+    description:
+      "Cox recording of BUCS Regatta 2019 - Intermediate 8 A Final. cox recording. OBUBC",
+    cox: "Max Thompson",
+    imageSrc: "https://www.youtube.com/embed/ChSXgYEWlDQ",
+  },
 ];
 
 const Home: NextPage = () => {
