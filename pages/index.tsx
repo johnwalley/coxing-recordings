@@ -105,6 +105,14 @@ const recordings = [
     cox: "Max Thompson",
     imageSrc: "https://www.youtube.com/embed/ChSXgYEWlDQ",
   },
+  {
+    id: 13,
+    name: "Cal Rowing Varsity 8 Cox Recording - 2018",
+    year: "2018",
+    description: "Stanford Invitational 2018. Redwood Shores.",
+    cox: "John Amorosana",
+    imageSrc: "https://www.youtube.com/embed/l-_IyB_nsVQ",
+  },
 ];
 
 const Home: NextPage = () => {
