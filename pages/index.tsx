@@ -113,6 +113,14 @@ const recordings = [
     cox: "John Amorosana",
     imageSrc: "https://www.youtube.com/embed/l-_IyB_nsVQ",
   },
+  {
+    id: 14,
+    name: "Henley Royal Regatta Finals Cox Recording - Women's Varsity 8+",
+    year: "2022",
+    description: "Even though we didn’t finish first, I am so beyond proud of each and every one of the girls in this boat.",
+    cox: "Delaney Gardner",
+    imageSrc: "https://www.youtube.com/embed/ZX2ID3SDmt8",
+  },
 ];
 
 const Home: NextPage = () => {
