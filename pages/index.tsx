@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Script from "next/script";
 import Layout from "../components/Layout";
 
 import { useMemo, useState } from "react";
@@ -117,7 +118,8 @@ const recordings = [
     id: 14,
     name: "Henley Royal Regatta Finals Cox Recording - Women's Varsity 8+",
     year: "2022",
-    description: "Even though we didn’t finish first, I am so beyond proud of each and every one of the girls in this boat.",
+    description:
+      "Even though we didn’t finish first, I am so beyond proud of each and every one of the girls in this boat.",
     cox: "Delaney Gardner",
     imageSrc: "https://www.youtube.com/embed/ZX2ID3SDmt8",
   },
@@ -138,6 +140,19 @@ const Home: NextPage = () => {
 
   return (
     <Layout title="Coxing Recordings | Get inspired">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-1FFZQFHYNY"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-1FFZQFHYNY');
+        `}
+      </Script>
       <h2 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Coxing Recordings
       </h2>
