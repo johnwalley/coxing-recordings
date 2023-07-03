@@ -15,7 +15,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <meta
+            name="description"
+            content="Check out this collection of coxing videos from races."
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
