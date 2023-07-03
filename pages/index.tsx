@@ -141,6 +141,15 @@ const recordings = [
     cox: "Colette Lucas-Conwell",
     imageSrc: "https://www.youtube.com/embed/BOxYoHi0ugA",
   },
+  {
+    id: 17,
+    name: "Cox recording - 2022 World Rowing Cup III, Women's Eight A-Final - Kristen Kit, Canada Women's Eight",
+    year: "2022",
+    description:
+      "Listen to Canadian coxswain Kristen Kit's Women's Eight race recording from the 2022 World Rowing Cup III in Lucerne, Switzerland.",
+    cox: "Kristen Kit",
+    imageSrc: "https://www.youtube.com/embed/ZdDz9cORKKg",
+  },
 ];
 
 const Home: NextPage = () => {
