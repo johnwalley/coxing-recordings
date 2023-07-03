@@ -157,12 +157,14 @@ const Home: NextPage = () => {
 
   const filteredRecordings = useMemo(
     () =>
-      recordings.filter(
-        (recording) =>
-          recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-          recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
-          recording.year.toLowerCase().includes(searchValue.toLowerCase())
-      ),
+      recordings
+        .sort((a, b) => +b.year - +a.year)
+        .filter(
+          (recording) =>
+            recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+            recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
+            recording.year.toLowerCase().includes(searchValue.toLowerCase())
+        ),
     [searchValue]
   );
 
