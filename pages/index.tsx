@@ -123,6 +123,24 @@ const recordings = [
     cox: "Delaney Gardner",
     imageSrc: "https://www.youtube.com/embed/ZX2ID3SDmt8",
   },
+  {
+    id: 15,
+    name: "I Mic'd Two Coxes Racing at Henley!",
+    year: "2023",
+    description:
+      "Kieran and Tom, you're legends for letting me mic you two up. Fair play to Washington and Brookes for a stellar race.",
+    cox: "Kieran Joyce and Tom Bryce",
+    imageSrc: "https://www.youtube.com/embed/4BmqmcXCMPU",
+  },
+  {
+    id: 16,
+    name: "I Micd Up the US Men's 8+ Cox at Henley",
+    year: "2022",
+    description:
+      "Such an epic race by the bois and Colette! Pity the rain started pouring all cinematic and then the launch splash made my camera lens go soft.",
+    cox: "Colette Lucas-Conwell",
+    imageSrc: "https://www.youtube.com/embed/BOxYoHi0ugA",
+  },
 ];
 
 const Home: NextPage = () => {
@@ -133,7 +151,8 @@ const Home: NextPage = () => {
       recordings.filter(
         (recording) =>
           recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-          recording.cox.toLowerCase().includes(searchValue.toLowerCase())
+          recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
+          recording.year.toLowerCase().includes(searchValue.toLowerCase())
       ),
     [searchValue]
   );
