@@ -89,7 +89,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2023 John Walley
+          &copy; 2023-2024 John Walley
         </p>
       </div>
     </footer>

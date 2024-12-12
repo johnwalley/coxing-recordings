@@ -150,6 +150,33 @@ const recordings = [
     cox: "Kristen Kit",
     imageSrc: "https://www.youtube.com/embed/ZdDz9cORKKg",
   },
+  {
+    id: 18,
+    name: "Henley Royal Regatta 2024 PE final cox recording",
+    year: "2024",
+    description:
+      "Shiplake College v St. Paul's School in the Princess Elizabeth Challenge Cup.",
+    cox: "Victor Bocquet",
+    imageSrc: "https://www.youtube.com/embed/29CcXBVIEko",
+  },
+  {
+    id: 19,
+    name: "The Boat Race 2022 - Oxford Men’s Cox Recording Highlights",
+    year: "2022",
+    description:
+      "Highlights from the Oxford boat in the 167th Men’s Boat Race, held on the Tideway, 3rd April 2022.",
+    cox: "Jack Tottem",
+    imageSrc: "https://www.youtube.com/embed/I28MS_MLbPg",
+  },
+  {
+    id: 20,
+    name: "Olympic Rowing Men’s Eight Cox Recording",
+    year: "2024",
+    description:
+      "Paris 2024 Men’s Eight Rowing Final.",
+    cox: "Harry Brightmore",
+    imageSrc: "https://www.youtube.com/embed/WJW5m76cpf0",
+  },
 ];
 
 const Home: NextPage = () => {
