@@ -1,7 +1,15 @@
 import { useMemo, useState } from "react";
-import { recordings } from "../data/recordings";
 
-export default function Recordings() {
+interface Recording {
+  id: string;
+  name: string;
+  year: string;
+  description: string;
+  cox: string;
+  imageSrc: string;
+}
+
+export default function Recordings({ recordings }: { recordings: Recording[] }) {
   const [searchValue, setSearchValue] = useState("");
 
   const filteredRecordings = useMemo(
@@ -11,6 +19,7 @@ export default function Recordings() {
         .filter(
           (recording) =>
             recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+            recording.description.toLowerCase().includes(searchValue.toLowerCase()) ||
             recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
             recording.year.toLowerCase().includes(searchValue.toLowerCase())
         ),
@@ -61,6 +70,7 @@ export default function Recordings() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
             </div>
             <div className="flex-1 p-4 space-y-2 flex flex-col">
