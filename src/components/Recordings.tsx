@@ -26,6 +26,8 @@ export default function Recordings({ recordings }: { recordings: Recording[] }) 
     [searchValue]
   );
 
+  const filteredIds = useMemo(() => new Set(filteredRecordings.map(r => r.id)), [filteredRecordings]);
+
   return (
     <>
       <h2 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
@@ -56,10 +58,10 @@ export default function Recordings({ recordings }: { recordings: Recording[] }) 
       </form>
       <h2 className="sr-only">Recordings</h2>
       <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
-        {filteredRecordings.map((recording) => (
+        {recordings.map((recording) => (
           <div
             key={recording.id}
-            className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden"
+            className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? '' : 'hidden'}`}
           >
             <div className="aspect-video bg-gray-200 group-hover:opacity-75">
               <iframe
