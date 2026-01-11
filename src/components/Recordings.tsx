@@ -13,7 +13,11 @@ interface Recording {
  * Recordings component that displays a searchable grid of coxing recordings.
  * Renders all recordings but hides non-matching ones to prevent YouTube embed reloading.
  */
-export default function Recordings({ recordings }: { recordings: Recording[] }) {
+export default function Recordings({
+  recordings,
+}: {
+  recordings: Recording[];
+}) {
   const [searchValue, setSearchValue] = useState("");
 
   const filteredRecordings = useMemo(
@@ -23,14 +27,19 @@ export default function Recordings({ recordings }: { recordings: Recording[] }) 
         .filter(
           (recording) =>
             recording.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.description.toLowerCase().includes(searchValue.toLowerCase()) ||
+            recording.description
+              .toLowerCase()
+              .includes(searchValue.toLowerCase()) ||
             recording.cox.toLowerCase().includes(searchValue.toLowerCase()) ||
-            recording.year.toLowerCase().includes(searchValue.toLowerCase())
+            recording.year.toLowerCase().includes(searchValue.toLowerCase()),
         ),
-    [searchValue]
+    [searchValue],
   );
 
-  const filteredIds = useMemo(() => new Set(filteredRecordings.map(r => r.id)), [filteredRecordings]);
+  const filteredIds = useMemo(
+    () => new Set(filteredRecordings.map((r) => r.id)),
+    [filteredRecordings],
+  );
 
   return (
     <>
@@ -65,7 +74,7 @@ export default function Recordings({ recordings }: { recordings: Recording[] }) 
         {recordings.map((recording) => (
           <div
             key={recording.id}
-            className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? '' : 'hidden'}`}
+            className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden ${filteredIds.has(recording.id) ? "" : "hidden"}`}
           >
             <div className="aspect-video bg-gray-200 group-hover:opacity-75">
               <iframe
