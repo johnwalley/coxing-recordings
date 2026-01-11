@@ -9,6 +9,10 @@ interface Recording {
   imageSrc: string;
 }
 
+/**
+ * Recordings component that displays a searchable grid of coxing recordings.
+ * Renders all recordings but hides non-matching ones to prevent YouTube embed reloading.
+ */
 export default function Recordings({ recordings }: { recordings: Recording[] }) {
   const [searchValue, setSearchValue] = useState("");
 
