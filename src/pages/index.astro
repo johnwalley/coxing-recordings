@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Recordings from '../components/Recordings.tsx';
+import { getCollection } from 'astro:content';
+
+const recordingsCollection = await getCollection('recordings');
+const recordings = recordingsCollection.map(entry => entry.data);
+---
+
+<Layout title="Coxing Recordings | Get inspired">
+  <Recordings recordings={recordings} client:load />
+</Layout>
