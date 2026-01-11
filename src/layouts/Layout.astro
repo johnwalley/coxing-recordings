@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 const { title = "This is the default title" } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -53,7 +54,7 @@ const { title = "This is the default title" } = Astro.props;
           </a>
         </div>
         <p class="mt-8 text-center text-base text-gray-400">
-          &copy; 2023-2024 John Walley
+          &copy; 2023-{currentYear} John Walley
         </p>
       </div>
     </footer>
