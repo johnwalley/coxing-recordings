@@ -19,10 +19,18 @@ const currentYear = new Date().getFullYear();
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href="https://www.coxing.co.uk" />
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.coxing.co.uk" />
+    <meta property="og:image" content="https://www.coxing.co.uk/og-image.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.coxing.co.uk/og-image.png" />
     <title>{title}</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FFZQFHYNY"></script>
     <script is:inline>
@@ -31,6 +39,13 @@ const currentYear = new Date().getFullYear();
       gtag('js', new Date());
       gtag('config', 'G-1FFZQFHYNY');
     </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Coxswain Recordings",
+      "url": "https://www.coxing.co.uk",
+      "description": description
+    })} />
   </head>
   <body>
     <main>

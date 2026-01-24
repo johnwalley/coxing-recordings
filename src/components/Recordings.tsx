@@ -81,7 +81,7 @@ export default function Recordings({
                 width="100%"
                 height="100%"
                 src={recording.imageSrc}
-                title="YouTube video player"
+                title={`${recording.name} - Coxswain Recording`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
