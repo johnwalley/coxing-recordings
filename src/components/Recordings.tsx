@@ -41,15 +41,38 @@ export default function Recordings({
     [filteredRecordings],
   );
 
+  const videoStructuredData = useMemo(
+    () =>
+      recordings.map((recording) => ({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: `${recording.name} - Coxswain Recording`,
+        description: recording.description,
+        embedUrl: recording.imageSrc,
+        uploadDate: `${recording.year}-01-01`,
+        creator: {
+          "@type": "Person",
+          name: recording.cox,
+        },
+      })),
+    [recordings],
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(videoStructuredData),
+        }}
+      />
       <h1 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Coxswain Recordings
       </h1>
       <p className="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
         Get inspired
       </p>
-      <form className="mt-4 mb-6 sm:flex">
+      <form className="mt-4 mb-6 sm:flex" role="search" aria-label="Search coxswain recordings">
         <label htmlFor="recording-search" className="sr-only">
           Search
         </label>
