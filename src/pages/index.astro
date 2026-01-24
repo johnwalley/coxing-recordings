@@ -7,6 +7,6 @@ const recordingsCollection = await getCollection('recordings');
 const recordings = recordingsCollection.map(entry => entry.data);
 ---
 
-<Layout title="Coxing Recordings | Get inspired">
+<Layout title="Coxswain Recordings | Rowing Race Audio from Henley & World Championships">
   <Recordings recordings={recordings} client:load />
 </Layout>

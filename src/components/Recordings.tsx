@@ -43,9 +43,9 @@ export default function Recordings({
 
   return (
     <>
-      <h2 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-        Coxing Recordings
-      </h2>
+      <h1 className="block text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Coxswain Recordings
+      </h1>
       <p className="block text-3xl font-extrabold tracking-tight text-pink-600 sm:text-4xl">
         Get inspired
       </p>
